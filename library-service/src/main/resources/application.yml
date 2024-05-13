@@ -13,6 +13,13 @@ spring:
     hibernate:
       ddl-auto: create-drop
 
+  profiles:
+    default: default
+
+  cloud:
+    config:
+      uri: optional:config-server:http//localhost:8889/
+
 server:
   port: 0
 

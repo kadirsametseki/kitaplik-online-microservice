@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
+        <module name="config-server" />
         <module name="library-service" />
         <module name="book-service" />
         <module name="eureka-server" />
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="api-gateway" target="17" />
       <module name="book-service" target="18" />
+      <module name="config-server" target="17" />
       <module name="eureka-server" target="17" />
       <module name="library-service" target="18" />
     </bytecodeTargetLevel>
@@ -23,6 +25,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="book-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="library-service" options="-parameters" />
     </option>
