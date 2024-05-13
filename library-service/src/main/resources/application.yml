@@ -18,9 +18,9 @@ spring:
 
   cloud:
     config:
-      uri: optional:config-server:http//localhost:8889/
+      uri: optional:configserver:http//localhost:8889/
   config:
-    import: optional:config-server:http//localhost:8889/
+    import: optional:configserver:http//localhost:8889/
 
 server:
   port: 0
