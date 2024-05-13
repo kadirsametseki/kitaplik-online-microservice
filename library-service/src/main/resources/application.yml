@@ -14,7 +14,7 @@ spring:
       ddl-auto: create-drop
 
   profiles:
-    default: default
+    active: default
 
   cloud:
     config:
