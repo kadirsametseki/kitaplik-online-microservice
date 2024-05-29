@@ -1,7 +1,4 @@
 spring:
-  application:
-    name: library-service
-
   h2:
     console:
       path: /h2-console
@@ -9,29 +6,33 @@ spring:
 
   jpa:
     show-sql: true
-    database: h2
     hibernate:
       ddl-auto: create-drop
+
+  application:
+    name: library-service
 
   profiles:
     active: default
 
+  config:
+    import: optional:configserver:http://localhost:8889/
   cloud:
     config:
-      uri: optional:configserver:http//localhost:8889/
-  config:
-    import: optional:configserver:http//localhost:8889/
+      uri: optional:configserver:http://localhost:8889/
 
 server:
   port: 0
 
 eureka:
   instance:
+    instance-id: ${spring.application.name}:${random.value}}
     prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
   client:
     service-url:
       default-zone: ${EUREKA_URI:http://localhost:8761/eureka}
+
 management:
   zipkin:
     tracing:
@@ -39,3 +40,12 @@ management:
   tracing:
     sampling:
       probability: 1.0
+
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: DEBUG
